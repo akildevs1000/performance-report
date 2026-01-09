@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Employee 12-Month Performance Report</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#111618] dark:text-white"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+     
+      <!-- Main Content -->
+      <main class="flex-1 px-4 py-8 lg:px-40">
+        <div class="mx-auto flex max-w-[1200px] flex-col gap-8">
+          <!-- Page Header -->
+          <div
+            class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+          >
+            <div class="flex flex-col gap-2">
+              <div
+                class="flex items-center gap-2 text-sm text-[#617c89] dark:text-[#9aa0a6]"
+              >
+                <span>Employees</span>
+                <span class="material-symbols-outlined text-xs"
+                  >chevron_right</span
+                >
+                <span>Reports</span>
+              </div>
+              <h1
+                class="text-3xl font-black tracking-tight text-[#111618] dark:text-white lg:text-4xl"
+              >
+                12-Month Performance Report
+              </h1>
+              <p
+                class="text-base font-medium text-[#617c89] dark:text-[#9aa0a6]"
+              >
+                Period:
+                <span class="text-[#111618] dark:text-white"
+                  >Jan 01, 2023 - Dec 31, 2023</span
+                >
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <button
+                class="flex items-center gap-2 rounded-lg border border-[#dbe2e6] bg-white px-4 py-2.5 text-sm font-bold text-[#111618] hover:bg-[#f0f3f4] dark:border-[#2a3c45] dark:bg-[#1a2c35] dark:text-white dark:hover:bg-[#2a3c45]"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >calendar_today</span
+                >
+                <span>Change Period</span>
+              </button>
+              <button
+                class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-white hover:bg-primary/90 transition-colors shadow-sm shadow-primary/30"
+              >
+                <span class="material-symbols-outlined text-lg">download</span>
+                <span>Export PDF</span>
+              </button>
+            </div>
+          </div>
+          <!-- Profile Card -->
+          <div
+            class="rounded-xl border border-[#dbe2e6] bg-white p-6 dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+          >
+            <div class="flex flex-col gap-6 md:flex-row md:items-center">
+              <div
+                class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full border-4 border-white shadow-sm dark:border-[#2a3c45]"
+              >
+                <div
+                  class="bg-center bg-no-repeat h-full w-full bg-cover"
+                  data-alt="Portrait of Sarah Jenkins, senior employee"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpSvSXVLo5PmB4HsdfwBpLirVaydX-VjrFddzzE-77__cn45cZ8DFTnkuN-cIVKDfafeTJheZRfLZ3OELp_rHw7Twz0sLrPCiQF5wa9uMHn9YA6W5RpPd4zXzZaayM118wgQ-YUd9qKR1JHqP0B46aYsN5EQD56hF8AKTKq_SaG8RTchFU0bowDvI8vPx0HxE9b06Rk2eoIaNdeGka2FnbeVnWi4-vupxAp-sVTuPGpP3QG45izD252u65nbzTgjtG8LAzi_-sHOkK');
+                  "
+                ></div>
+              </div>
+              <div class="flex flex-1 flex-col gap-1">
+                <div class="flex items-center gap-3">
+                  <h3 class="text-2xl font-bold text-[#111618] dark:text-white">
+                    Sarah Jenkins
+                  </h3>
+                  <span
+                    class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                    >Active</span
+                  >
+                </div>
+                <div
+                  class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#617c89] dark:text-[#9aa0a6]"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-lg"
+                      >badge</span
+                    >
+                    ID: #48291</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-lg">work</span>
+                    Senior UX Designer</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-lg"
+                      >apartment</span
+                    >
+                    Design Department</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-lg">mail</span>
+                    sarah.j@company.com</span
+                  >
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-8 border-t border-[#f0f3f4] pt-4 md:border-l md:border-t-0 md:pl-8 md:pt-0 dark:border-[#2a3c45]"
+              >
+                <div>
+                  <p
+                    class="text-xs font-medium uppercase tracking-wider text-[#617c89] dark:text-[#9aa0a6]"
+                  >
+                    Manager
+                  </p>
+                  <p class="font-bold text-[#111618] dark:text-white">
+                    Michael Scott
+                  </p>
+                </div>
+                <div>
+                  <p
+                    class="text-xs font-medium uppercase tracking-wider text-[#617c89] dark:text-[#9aa0a6]"
+                  >
+                    Join Date
+                  </p>
+                  <p class="font-bold text-[#111618] dark:text-white">
+                    Mar 12, 2019
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- KPI Stats Grid -->
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Stat Card 1 -->
+            <div
+              class="flex flex-col gap-3 rounded-xl border border-[#dbe2e6] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+            >
+              <div class="flex items-center justify-between">
+                <div
+                  class="flex items-center justify-center rounded-lg bg-blue-50 p-2 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400"
+                >
+                  <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <span
+                  class="flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-bold text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >trending_up</span
+                  >
+                  +5.2%
+                </span>
+              </div>
+              <div>
+                <p
+                  class="text-sm font-medium text-[#617c89] dark:text-[#9aa0a6]"
+                >
+                  Total Working Hours
+                </p>
+                <p
+                  class="mt-1 text-3xl font-bold tracking-tight text-[#111618] dark:text-white"
+                >
+                  2,080 h
+                </p>
+              </div>
+              <div
+                class="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+              >
+                <div class="h-full w-[85%] rounded-full bg-blue-500"></div>
+              </div>
+            </div>
+            <!-- Stat Card 2 -->
+            <div
+              class="flex flex-col gap-3 rounded-xl border border-[#dbe2e6] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+            >
+              <div class="flex items-center justify-between">
+                <div
+                  class="flex items-center justify-center rounded-lg bg-purple-50 p-2 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400"
+                >
+                  <span class="material-symbols-outlined">timer</span>
+                </div>
+                <span
+                  class="flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-bold text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >trending_up</span
+                  >
+                  +2.1%
+                </span>
+              </div>
+              <div>
+                <p
+                  class="text-sm font-medium text-[#617c89] dark:text-[#9aa0a6]"
+                >
+                  Avg. Punctuality
+                </p>
+                <p
+                  class="mt-1 text-3xl font-bold tracking-tight text-[#111618] dark:text-white"
+                >
+                  96%
+                </p>
+              </div>
+              <div
+                class="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+              >
+                <div class="h-full w-[96%] rounded-full bg-purple-500"></div>
+              </div>
+            </div>
+            <!-- Stat Card 3 -->
+            <div
+              class="flex flex-col gap-3 rounded-xl border border-[#dbe2e6] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+            >
+              <div class="flex items-center justify-between">
+                <div
+                  class="flex items-center justify-center rounded-lg bg-orange-50 p-2 text-orange-600 dark:bg-orange-900/20 dark:text-orange-400"
+                >
+                  <span class="material-symbols-outlined"
+                    >history_toggle_off</span
+                  >
+                </div>
+                <span
+                  class="flex items-center gap-1 rounded-full bg-red-50 px-2 py-1 text-xs font-bold text-red-600 dark:bg-red-900/20 dark:text-red-400"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >trending_down</span
+                  >
+                  -10%
+                </span>
+              </div>
+              <div>
+                <p
+                  class="text-sm font-medium text-[#617c89] dark:text-[#9aa0a6]"
+                >
+                  Total Overtime
+                </p>
+                <p
+                  class="mt-1 text-3xl font-bold tracking-tight text-[#111618] dark:text-white"
+                >
+                  48 h
+                </p>
+              </div>
+              <div
+                class="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+              >
+                <div class="h-full w-[35%] rounded-full bg-orange-500"></div>
+              </div>
+            </div>
+            <!-- Stat Card 4 -->
+            <div
+              class="flex flex-col gap-3 rounded-xl border border-[#dbe2e6] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+            >
+              <div class="flex items-center justify-between">
+                <div
+                  class="flex items-center justify-center rounded-lg bg-emerald-50 p-2 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400"
+                >
+                  <span class="material-symbols-outlined">event_available</span>
+                </div>
+                <span
+                  class="flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-bold text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >trending_up</span
+                  >
+                  +0.5%
+                </span>
+              </div>
+              <div>
+                <p
+                  class="text-sm font-medium text-[#617c89] dark:text-[#9aa0a6]"
+                >
+                  Attendance Rate
+                </p>
+                <p
+                  class="mt-1 text-3xl font-bold tracking-tight text-[#111618] dark:text-white"
+                >
+                  98.5%
+                </p>
+              </div>
+              <div
+                class="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+              >
+                <div class="h-full w-[98.5%] rounded-full bg-emerald-500"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Charts Section -->
+          <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <!-- Chart 1: Yearly Trend -->
+            <div
+              class="flex flex-col gap-4 rounded-xl border border-[#dbe2e6] bg-white p-6 dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-[#111618] dark:text-white">
+                    Attendance Trends
+                  </h3>
+                  <p class="text-sm text-[#617c89] dark:text-[#9aa0a6]">
+                    Monthly average over the last year
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-2 rounded-lg bg-[#f0f3f4] p-1 dark:bg-[#2a3c45]"
+                >
+                  <button
+                    class="rounded bg-white px-3 py-1 text-xs font-bold shadow-sm dark:bg-[#101c22] dark:text-white"
+                  >
+                    Line
+                  </button>
+                  <button
+                    class="rounded px-3 py-1 text-xs font-medium text-[#617c89] hover:bg-white/50 dark:text-[#9aa0a6] dark:hover:bg-[#101c22]/50"
+                  >
+                    Bar
+                  </button>
+                </div>
+              </div>
+              <!-- Mock Chart SVG -->
+              <div class="relative mt-4 h-64 w-full">
+                <svg
+                  class="h-full w-full"
+                  preserveaspectratio="none"
+                  viewbox="0 0 400 150"
+                >
+                  <!-- Grid Lines -->
+                  <line
+                    stroke="#e5e7eb"
+                    stroke-width="1"
+                    x1="0"
+                    x2="400"
+                    y1="150"
+                    y2="150"
+                  ></line>
+                  <line
+                    stroke="#f3f4f6"
+                    stroke-dasharray="4 4"
+                    stroke-width="1"
+                    x1="0"
+                    x2="400"
+                    y1="100"
+                    y2="100"
+                  ></line>
+                  <line
+                    stroke="#f3f4f6"
+                    stroke-dasharray="4 4"
+                    stroke-width="1"
+                    x1="0"
+                    x2="400"
+                    y1="50"
+                    y2="50"
+                  ></line>
+                  <!-- Area Gradient -->
+                  <defs>
+                    <lineargradient
+                      id="chartGradient"
+                      x1="0"
+                      x2="0"
+                      y1="0"
+                      y2="1"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="#13a4ec"
+                        stop-opacity="0.2"
+                      ></stop>
+                      <stop
+                        offset="100%"
+                        stop-color="#13a4ec"
+                        stop-opacity="0"
+                      ></stop>
+                    </lineargradient>
+                  </defs>
+                  <path
+                    d="M0,120 Q40,100 80,110 T160,90 T240,60 T320,80 T400,40 V150 H0 Z"
+                    fill="url(#chartGradient)"
+                  ></path>
+                  <!-- Line -->
+                  <path
+                    d="M0,120 Q40,100 80,110 T160,90 T240,60 T320,80 T400,40"
+                    fill="none"
+                    stroke="#13a4ec"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  ></path>
+                  <!-- Tooltip Point -->
+                  <circle
+                    cx="320"
+                    cy="80"
+                    fill="#13a4ec"
+                    r="5"
+                    stroke="white"
+                    stroke-width="2"
+                  ></circle>
+                </svg>
+                <!-- Tooltip Mock -->
+                <div
+                  class="absolute right-[18%] top-[40%] rounded-lg bg-[#111618] px-2 py-1 text-xs text-white shadow-lg"
+                >
+                  Oct: 97%
+                </div>
+              </div>
+              <div
+                class="flex justify-between px-2 text-xs font-medium text-[#617c89] dark:text-[#9aa0a6]"
+              >
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span
+                ><span>May</span><span>Jun</span> <span>Jul</span
+                ><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span
+                ><span>Dec</span>
+              </div>
+            </div>
+            <!-- Chart 2: Overtime vs Lost Hours -->
+            <div
+              class="flex flex-col gap-4 rounded-xl border border-[#dbe2e6] bg-white p-6 dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-[#111618] dark:text-white">
+                    Efficiency Breakdown
+                  </h3>
+                  <p class="text-sm text-[#617c89] dark:text-[#9aa0a6]">
+                    Overtime vs. Lost Hours
+                  </p>
+                </div>
+                <button
+                  class="flex items-center gap-1 text-xs font-medium text-primary"
+                >
+                  View Details
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="relative mt-4 flex h-64 w-full items-end justify-between gap-2 px-2"
+              >
+                <!-- Grid Background -->
+                <div
+                  class="absolute inset-0 z-0 flex flex-col justify-between py-4"
+                >
+                  <div
+                    class="w-full border-t border-dashed border-gray-100 dark:border-gray-800"
+                  ></div>
+                  <div
+                    class="w-full border-t border-dashed border-gray-100 dark:border-gray-800"
+                  ></div>
+                  <div
+                    class="w-full border-t border-dashed border-gray-100 dark:border-gray-800"
+                  ></div>
+                  <div
+                    class="w-full border-t border-dashed border-gray-100 dark:border-gray-800"
+                  ></div>
+                </div>
+                <!-- Bar Groups (simplified for visual representation) -->
+                <!-- Item 1 -->
+                <div class="z-10 flex h-full w-full flex-col justify-end gap-1">
+                  <div
+                    class="relative flex w-full flex-col justify-end gap-0.5 rounded-t-sm hover:opacity-80 transition-opacity cursor-pointer group"
+                    style="height: 60%"
+                  >
+                    <div
+                      class="w-full rounded-t-sm bg-orange-500"
+                      style="height: 70%"
+                    ></div>
+                    <!-- Overtime -->
+                    <div
+                      class="w-full rounded-b-sm bg-red-400"
+                      style="height: 30%"
+                    ></div>
+                    <!-- Lost -->
+                  </div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Jan</span
+                  >
+                </div>
+                <!-- Item 2 -->
+                <div class="z-10 flex h-full w-full flex-col justify-end gap-1">
+                  <div
+                    class="relative flex w-full flex-col justify-end gap-0.5 rounded-t-sm hover:opacity-80 transition-opacity cursor-pointer group"
+                    style="height: 50%"
+                  >
+                    <div
+                      class="w-full rounded-t-sm bg-orange-500"
+                      style="height: 60%"
+                    ></div>
+                    <div
+                      class="w-full rounded-b-sm bg-red-400"
+                      style="height: 40%"
+                    ></div>
+                  </div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Feb</span
+                  >
+                </div>
+                <!-- Item 3 -->
+                <div class="z-10 flex h-full w-full flex-col justify-end gap-1">
+                  <div
+                    class="relative flex w-full flex-col justify-end gap-0.5 rounded-t-sm hover:opacity-80 transition-opacity cursor-pointer group"
+                    style="height: 80%"
+                  >
+                    <div
+                      class="w-full rounded-t-sm bg-orange-500"
+                      style="height: 90%"
+                    ></div>
+                    <div
+                      class="w-full rounded-b-sm bg-red-400"
+                      style="height: 10%"
+                    ></div>
+                  </div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Mar</span
+                  >
+                </div>
+                <!-- Spacer for other months (visual simulation) -->
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[40%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Apr</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[65%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >May</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[55%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Jun</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[70%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Jul</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[45%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Aug</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[30%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Sep</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[85%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Oct</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[50%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Nov</span
+                  >
+                </div>
+                <div
+                  class="z-10 flex h-full w-full flex-col justify-end gap-1 opacity-50"
+                >
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 h-[60%] rounded-t-sm"
+                  ></div>
+                  <span class="text-center text-[10px] text-[#617c89]"
+                    >Dec</span
+                  >
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-center gap-6">
+                <div class="flex items-center gap-2">
+                  <div class="h-3 w-3 rounded-full bg-orange-500"></div>
+                  <span
+                    class="text-xs font-medium text-[#617c89] dark:text-[#9aa0a6]"
+                    >Overtime</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="h-3 w-3 rounded-full bg-red-400"></div>
+                  <span
+                    class="text-xs font-medium text-[#617c89] dark:text-[#9aa0a6]"
+                    >Lost Hours</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Monthly Breakdown Table -->
+          <div
+            class="rounded-xl border border-[#dbe2e6] bg-white dark:border-[#2a3c45] dark:bg-[#1a2c35]"
+          >
+            <div
+              class="flex flex-wrap items-center justify-between gap-4 p-6 border-b border-[#f0f3f4] dark:border-[#2a3c45]"
+            >
+              <h3 class="text-xl font-bold text-[#111618] dark:text-white">
+                Monthly Breakdown
+              </h3>
+              <div class="flex gap-3">
+                <div
+                  class="flex items-center rounded-lg border border-[#dbe2e6] px-3 py-1.5 dark:border-[#2a3c45]"
+                >
+                  <span
+                    class="material-symbols-outlined mr-2 text-sm text-[#617c89]"
+                    >filter_list</span
+                  >
+                  <span
+                    class="text-sm font-medium text-[#111618] dark:text-white"
+                    >Filter</span
+                  >
+                </div>
+                <div
+                  class="flex items-center rounded-lg border border-[#dbe2e6] px-3 py-1.5 dark:border-[#2a3c45]"
+                >
+                  <span
+                    class="material-symbols-outlined mr-2 text-sm text-[#617c89]"
+                    >sort</span
+                  >
+                  <span
+                    class="text-sm font-medium text-[#111618] dark:text-white"
+                    >Sort by Month</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm">
+                <thead
+                  class="bg-[#f8f9fa] text-[#617c89] dark:bg-[#101c22] dark:text-[#9aa0a6]"
+                >
+                  <tr>
+                    <th class="px-6 py-4 font-semibold">Month</th>
+                    <th class="px-6 py-4 font-semibold">Status Summary</th>
+                    <th class="px-6 py-4 font-semibold">Total Hours</th>
+                    <th class="px-6 py-4 font-semibold">Overtime</th>
+                    <th class="px-6 py-4 font-semibold">Lost Hours</th>
+                    <th class="px-6 py-4 font-semibold">Punctuality</th>
+                    <th class="px-6 py-4 font-semibold text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#f0f3f4] dark:divide-[#2a3c45]">
+                  <!-- Row 1 -->
+                  <tr
+                    class="hover:bg-gray-50 dark:hover:bg-[#1a2c35]/50 transition-colors"
+                  >
+                    <td
+                      class="px-6 py-4 font-bold text-[#111618] dark:text-white"
+                    >
+                      January
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex gap-2">
+                        <span
+                          class="inline-flex items-center rounded bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                          >20 Present</span
+                        >
+                        <span
+                          class="inline-flex items-center rounded bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                          >1 Absent</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-[#111618] dark:text-white">
+                      168 h
+                    </td>
+                    <td class="px-6 py-4 text-orange-600 font-medium">4 h</td>
+                    <td class="px-6 py-4 text-[#617c89] dark:text-[#9aa0a6]">
+                      -
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="h-1.5 w-16 rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+                        >
+                          <div
+                            class="h-full rounded-full bg-green-500"
+                            style="width: 98%"
+                          ></div>
+                        </div>
+                        <span
+                          class="text-xs font-medium text-[#111618] dark:text-white"
+                          >98%</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="text-[#617c89] hover:text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-lg"
+                          >visibility</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr
+                    class="hover:bg-gray-50 dark:hover:bg-[#1a2c35]/50 transition-colors"
+                  >
+                    <td
+                      class="px-6 py-4 font-bold text-[#111618] dark:text-white"
+                    >
+                      February
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex gap-2">
+                        <span
+                          class="inline-flex items-center rounded bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                          >19 Present</span
+                        >
+                        <span
+                          class="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-400"
+                          >1 Leave</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-[#111618] dark:text-white">
+                      152 h
+                    </td>
+                    <td class="px-6 py-4 text-orange-600 font-medium">2 h</td>
+                    <td class="px-6 py-4 text-red-600 font-medium">1 h</td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="h-1.5 w-16 rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+                        >
+                          <div
+                            class="h-full rounded-full bg-green-500"
+                            style="width: 95%"
+                          ></div>
+                        </div>
+                        <span
+                          class="text-xs font-medium text-[#111618] dark:text-white"
+                          >95%</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="text-[#617c89] hover:text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-lg"
+                          >visibility</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr
+                    class="hover:bg-gray-50 dark:hover:bg-[#1a2c35]/50 transition-colors"
+                  >
+                    <td
+                      class="px-6 py-4 font-bold text-[#111618] dark:text-white"
+                    >
+                      March
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex gap-2">
+                        <span
+                          class="inline-flex items-center rounded bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                          >22 Present</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-[#111618] dark:text-white">
+                      176 h
+                    </td>
+                    <td class="px-6 py-4 text-orange-600 font-medium">8 h</td>
+                    <td class="px-6 py-4 text-[#617c89] dark:text-[#9aa0a6]">
+                      -
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="h-1.5 w-16 rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+                        >
+                          <div
+                            class="h-full rounded-full bg-green-500"
+                            style="width: 100%"
+                          ></div>
+                        </div>
+                        <span
+                          class="text-xs font-medium text-[#111618] dark:text-white"
+                          >100%</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="text-[#617c89] hover:text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-lg"
+                          >visibility</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr
+                    class="hover:bg-gray-50 dark:hover:bg-[#1a2c35]/50 transition-colors"
+                  >
+                    <td
+                      class="px-6 py-4 font-bold text-[#111618] dark:text-white"
+                    >
+                      April
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex gap-2">
+                        <span
+                          class="inline-flex items-center rounded bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                          >20 Present</span
+                        >
+                        <span
+                          class="inline-flex items-center rounded bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                          >1 Absent</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-[#111618] dark:text-white">
+                      160 h
+                    </td>
+                    <td class="px-6 py-4 text-orange-600 font-medium">1 h</td>
+                    <td class="px-6 py-4 text-[#617c89] dark:text-[#9aa0a6]">
+                      -
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="h-1.5 w-16 rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+                        >
+                          <div
+                            class="h-full rounded-full bg-yellow-400"
+                            style="width: 88%"
+                          ></div>
+                        </div>
+                        <span
+                          class="text-xs font-medium text-[#111618] dark:text-white"
+                          >88%</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="text-[#617c89] hover:text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-lg"
+                          >visibility</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 5 -->
+                  <tr
+                    class="hover:bg-gray-50 dark:hover:bg-[#1a2c35]/50 transition-colors"
+                  >
+                    <td
+                      class="px-6 py-4 font-bold text-[#111618] dark:text-white"
+                    >
+                      May
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex gap-2">
+                        <span
+                          class="inline-flex items-center rounded bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                          >21 Present</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-[#111618] dark:text-white">
+                      168 h
+                    </td>
+                    <td class="px-6 py-4 text-orange-600 font-medium">12 h</td>
+                    <td class="px-6 py-4 text-[#617c89] dark:text-[#9aa0a6]">
+                      -
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="h-1.5 w-16 rounded-full bg-[#f0f3f4] dark:bg-[#2a3c45]"
+                        >
+                          <div
+                            class="h-full rounded-full bg-green-500"
+                            style="width: 99%"
+                          ></div>
+                        </div>
+                        <span
+                          class="text-xs font-medium text-[#111618] dark:text-white"
+                          >99%</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="text-[#617c89] hover:text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-lg"
+                          >visibility</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="flex items-center justify-between border-t border-[#f0f3f4] bg-[#f8f9fa] px-6 py-4 dark:border-[#2a3c45] dark:bg-[#101c22]"
+            >
+              <span class="text-sm text-[#617c89] dark:text-[#9aa0a6]"
+                >Showing 5 of 12 months</span
+              >
+              <div class="flex gap-2">
+                <button
+                  class="flex h-8 w-8 items-center justify-center rounded border border-[#dbe2e6] bg-white text-[#617c89] hover:bg-[#f0f3f4] disabled:opacity-50 dark:border-[#2a3c45] dark:bg-[#1a2c35] dark:text-white"
+                  disabled=""
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >chevron_left</span
+                  >
+                </button>
+                <button
+                  class="flex h-8 w-8 items-center justify-center rounded border border-[#dbe2e6] bg-white text-[#617c89] hover:bg-[#f0f3f4] dark:border-[#2a3c45] dark:bg-[#1a2c35] dark:text-white"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
