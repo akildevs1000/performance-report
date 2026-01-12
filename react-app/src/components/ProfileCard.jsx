@@ -1,5 +1,8 @@
 function ProfileCard({ employee }) {
   if (!employee) return null;
+
+  employee.profile_picture = `https://backend.mytime2cloud.com/media/employee/profile_picture/1765458674.jpg`;
+
   return (
     <div className="rounded-xl border border-[#dbe2e6] bg-white p-6  ">
       <div className="flex flex-col gap-6 md:flex-row md:items-center">
@@ -53,14 +56,16 @@ function ProfileCard({ employee }) {
             <p className="text-xs font-medium uppercase tracking-wider text-[#617c89] ">
               Manager
             </p>
-            <p className="font-bold text-[#111618] ">{employee?.branch?.reporting_manager || "--"}</p>
+            <p className="font-bold text-[#111618] ">
+              {employee?.branch?.reporting_manager || "--"}
+            </p>
           </div>
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-[#617c89] ">
               Join Date
             </p>
             <p className="font-bold text-[#111618] ">
-              {employee.show_joining_date}
+              {employee.joining_date ? employee.show_joining_date : "-"}
             </p>
           </div>
         </div>

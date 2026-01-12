@@ -11,16 +11,19 @@ const DashboardContent = () => {
   const [searchParams] = useSearchParams();
 
   // 2. Extract values (e.g., ?employeeId=7&company_id=2)
-  const employeeId = searchParams.get("employeeId");
-  const companyId = searchParams.get("company_id") || "2"; // Default to 2 if missing
+  const employee_id = searchParams.get("employee_id");
+  const company_id = searchParams.get("company_id") || "2"; // Default to 2 if missing
+
+  const from_date = searchParams.get("from_date"); // Default to 2 if missing
+  const to_date = searchParams.get("to_date"); // Default to 2 if missing
 
   // 1. Create the ref INSIDE the component that renders the content
   const dashboardRef = useRef(null);
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [startDate, setStartDate] = useState(new Date("2026-01-01"));
-  const [endDate, setEndDate] = useState(new Date("2026-12-31"));
+  const [startDate, setStartDate] = useState(new Date(from_date));
+  const [endDate, setEndDate] = useState(new Date(to_date));
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,23 +34,15 @@ const DashboardContent = () => {
         const formattedTo = endDate.toISOString().split("T")[0];
 
         const response = await fetch(
-          "https://backend.mytime2cloud.com/api/performance-report",
+          `https://mytime2cloud-backend.test/api/performance-report-single?employee_id=${employee_id}&company_id=${company_id}&from_date=${formattedFrom}&to_date=${formattedTo}`,
           {
-            method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              employee_id: [employeeId],
-              company_id: parseInt(companyId), // Use the ID from the URL
-              report_type: "monthly",
-              from_date: formattedFrom,
-              to_date: formattedTo,
-              department_ids: [],
-            }),
           }
         );
-        const result = await response.json();
-        if (result.data && result.data.length > 0) {
-          setData(result.data[0]);
+        const data = await response.json();
+
+        if (data) {
+          setData(data);
         }
       } catch (error) {
         console.error("Fetch error:", error);
@@ -56,12 +51,14 @@ const DashboardContent = () => {
       }
     };
     fetchData();
-  }, [employeeId, companyId, startDate, endDate]);
+  }, [employee_id, company_id, startDate, endDate]);
 
   if (loading) return <div className="p-20 text-center">Loading...</div>;
   if (!data)
     return (
-      <div className="p-20 text-center">No data found for ID: {employeeId}</div>
+      <div className="p-20 text-center">
+        No data found for ID: {employee_id}
+      </div>
     );
 
   return (
@@ -77,10 +74,10 @@ const DashboardContent = () => {
         setEndDate={setEndDate}
         dashboardRef={dashboardRef}
       />
-      <ProfileCard employee={data.employee} />
-      <Stats stats={data} />
+      <ProfileCard employee={data} />
+      <Stats data={data.summary} />
       <Charts stats={data} />
-      <MonthlyBreakdownTable data={data} />
+      <MonthlyBreakdownTable data={data.monthly_breakdown} />
       <Footer data={data} />
     </div>
   );

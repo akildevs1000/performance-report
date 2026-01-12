@@ -1,4 +1,4 @@
-function Stats() {
+function Stats({ data }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* <!-- Stat Card 1 --> */}
@@ -19,7 +19,7 @@ function Stats() {
             Total Working Hours
           </p>
           <p className="mt-1 text-3xl font-bold tracking-tight text-[#111618] ">
-            2,080 h
+            {data.total_hrs}
           </p>
         </div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] ">
@@ -44,7 +44,7 @@ function Stats() {
             Avg. Punctuality
           </p>
           <p className="mt-1 text-3xl font-bold tracking-tight text-[#111618] ">
-            96%
+            {data.total_punctuality}
           </p>
         </div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] ">
@@ -69,7 +69,7 @@ function Stats() {
         <div>
           <p className="text-sm font-medium text-[#617c89] ">Total Overtime</p>
           <p className="mt-1 text-3xl font-bold tracking-tight text-[#111618] ">
-            48 h
+            {data.total_ot_hrs}
           </p>
         </div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] ">
@@ -92,7 +92,7 @@ function Stats() {
         <div>
           <p className="text-sm font-medium text-[#617c89] ">Attendance Rate</p>
           <p className="mt-1 text-3xl font-bold tracking-tight text-[#111618] ">
-            98.5%
+            {data.total_attendance_rate}
           </p>
         </div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-[#f0f3f4] ">
