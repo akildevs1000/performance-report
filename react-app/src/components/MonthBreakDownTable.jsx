@@ -31,7 +31,7 @@ function MonthlyBreakdownTable({ data }) {
                 {/* Present (Green) */}
                 <td className="px-6 py-4">
                   <div className="flex gap-2">
-                    <span className="inline-flex items-center rounded bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700">
+                    <span className="inline-flex items-center rounded px-2 py-0.5 text-xs font-medium text-green-700">
                       {item.present}
                     </span>
                   </div>
@@ -40,7 +40,7 @@ function MonthlyBreakdownTable({ data }) {
                 {/* Absent (Red) */}
                 <td className="px-6 py-4">
                   <div className="flex gap-2">
-                    <span className="inline-flex items-center rounded bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700">
+                    <span className="inline-flex items-center rounded px-2 py-0.5 text-xs font-medium text-red-700">
                       {item.absent}
                     </span>
                   </div>

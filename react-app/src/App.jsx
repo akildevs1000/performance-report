@@ -76,7 +76,7 @@ const DashboardContent = () => {
       />
       <ProfileCard employee={data} />
       <Stats data={data.summary} />
-      <Charts stats={data} />
+      <Charts data={data.chart_data} />
       <MonthlyBreakdownTable data={data.monthly_breakdown} />
       <Footer data={data} />
     </div>
