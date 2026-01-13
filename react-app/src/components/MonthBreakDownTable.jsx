@@ -1,6 +1,4 @@
-function MonthlyBreakdownTable({ data }) {
-  console.log(data);
-
+function MonthlyBreakdownTable({ data, isExporting }) {
   return (
     <div className="rounded-xl border border-[#dbe2e6] bg-white">
       <div className="flex flex-wrap items-center justify-between gap-4 p-3 border-b border-[#f0f3f4] ">
@@ -49,7 +47,7 @@ function MonthlyBreakdownTable({ data }) {
                 {/* Leave (Gray) */}
                 <td className="px-6 py-4">
                   <div className="flex gap-2">
-                    <span className="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-700">
+                    <span className="inline-flex items-center rounded  px-2 py-0.5 text-xs font-medium text-gray-700">
                       {item.leave}
                     </span>
                   </div>
@@ -70,17 +68,13 @@ function MonthlyBreakdownTable({ data }) {
 
                 {/* Punctuality Progress Bar */}
                 <td className="px-6 py-4">
-                  <div className="flex items-center gap-2">
-                    <div className="h-1.5 w-16 rounded-full bg-[#f0f3f4]">
-                      <div
-                        className="h-full rounded-full bg-green-500 transition-all duration-500"
-                        style={{ width: item.punctuality }} // item.punctuality already includes '%'
-                      ></div>
-                    </div>
-                    <span className="text-xs font-medium text-[#111618]">
-                      {item.punctuality}
-                    </span>
-                  </div>
+                  <span
+                    className={`text-xs font-medium text-[#111618] ${
+                      isExporting ? "mt-0" : "mt-0"
+                    }`}
+                  >
+                    {item.punctuality}
+                  </span>
                 </td>
               </tr>
             ))}
