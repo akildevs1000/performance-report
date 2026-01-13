@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import {
   AreaChart,
   Area,
@@ -32,7 +31,6 @@ const Charts = ({ data }) => {
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={data}
-              /* Increase left/right margins to give the labels room to breathe */
               margin={{ top: 10, right: 30, left: 30, bottom: 0 }}
             >
               <defs>
@@ -47,23 +45,27 @@ const Charts = ({ data }) => {
                   <stop offset="95%" stopColor="#13a4ec" stopOpacity={0} />
                 </linearGradient>
               </defs>
+
+              {/* MODIFIED: Removed vertical={false} to show both horizontal and vertical grid lines */}
               <CartesianGrid
                 strokeDasharray="3 3"
-                vertical={false}
                 stroke="#e5e7eb"
+                vertical={true}
               />
+
               <XAxis
                 dataKey="name"
                 axisLine={false}
                 tickLine={false}
                 tick={{ fill: "#617c89", fontSize: 12 }}
                 dy={10}
-                /* FIX 1: Set padding to ensure the first and last points aren't cut off */
                 padding={{ left: 10, right: 10 }}
-                /* FIX 2: Ensure all labels are forced to show regardless of space */
                 interval={0}
               />
+
+              {/* Note: Grid lines will still appear based on these domain values even if the axis is hidden */}
               <YAxis hide domain={[0, 100]} />
+
               <Tooltip
                 contentStyle={{
                   borderRadius: "8px",

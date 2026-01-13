@@ -8,7 +8,7 @@ function Footer() {
   });
 
   return (
-    <footer className="mt-12 border-t border-gray-200 pt-8 pb-12 text-[#617c89]">
+    <footer className=" pb-5 border-t border-gray-200  text-[#617c89]">
       <div className="flex flex-col items-center justify-between gap-4 md:flex-row text-sm font-medium">
         {/* Left Side: Print Timestamp */}
         <div className="flex items-center gap-2">

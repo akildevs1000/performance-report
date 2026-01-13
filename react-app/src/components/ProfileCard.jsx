@@ -21,9 +21,9 @@ function ProfileCard({ employee, isExporting }) {
               {employee.full_name}
             </h3>
             {employee.status == 1 ? (
-              <span className="inline-flex h-[25px] h-fit items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold leading-none text-green-700">
+              <span className="inline-flex h-[25px] items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold leading-none text-green-700">
                 <span
-                  className={`${isExporting ? "mt-[-15px]" : "mt-0"} block`}
+                  className={`${isExporting ? "mt-[-15px]" : ""} block`}
                 >
                   Active
                 </span>
