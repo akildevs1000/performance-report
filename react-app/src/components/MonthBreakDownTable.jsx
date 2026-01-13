@@ -1,6 +1,6 @@
 function MonthlyBreakdownTable({ data, isExporting }) {
   return (
-    <div className="rounded-xl border border-[#dbe2e6] bg-white">
+    <div className="rounded-xl border border-[#dbe2e6] bg-white min-h-[780px]">
       <div className="flex flex-wrap items-center justify-between gap-4 p-3 border-b border-[#f0f3f4] ">
         <p className="font-bold text-[#111618] ">Monthly Breakdown</p>
       </div>
