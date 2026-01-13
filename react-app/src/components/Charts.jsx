@@ -1,4 +1,6 @@
 import React from "react";
+
+
 import {
   AreaChart,
   Area,
@@ -13,14 +15,6 @@ import {
 } from "recharts";
 
 const Charts = ({ data }) => {
-  console.log(`chart_data`, data);
-
-  // // Fallback data if none is provided via props
-  // const data = data || [
-  //   { name: "Jan", attendance: 85, overtime: 40, lost: 10 },
-  //   { name: "Feb", attendance: 88, overtime: 35, lost: 15 },
-  // ];
-
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
       {/* Chart 1: Attendance Trends (Area Chart) */}
@@ -56,7 +50,7 @@ const Charts = ({ data }) => {
               <CartesianGrid
                 strokeDasharray="3 3"
                 vertical={false}
-                stroke="#f3f4f6"
+                stroke="#e5e7eb"
               />
               <XAxis
                 dataKey="name"
@@ -112,8 +106,8 @@ const Charts = ({ data }) => {
             >
               <CartesianGrid
                 strokeDasharray="3 3"
-                vertical={false}
-                stroke="#f3f4f6"
+                /* Use a darker grey for better visibility */
+                stroke="#e5e7eb"
               />
               <XAxis
                 dataKey="name"

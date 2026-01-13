@@ -25,6 +25,7 @@ function PageHeader({
   setStartDate,
   setEndDate,
   dashboardRef,
+  onExportChange
 }) {
   // Helper to format dates safely
   const formatDisplayDate = (date) => {
@@ -87,7 +88,7 @@ function PageHeader({
         />
 
         {/* Export Button (Added back!) */}
-        <ExportButton dashboardRef={dashboardRef} />
+        <ExportButton dashboardRef={dashboardRef} onExportChange={onExportChange} />
       </div>
     </div>
   );

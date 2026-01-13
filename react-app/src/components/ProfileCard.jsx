@@ -1,4 +1,4 @@
-function ProfileCard({ employee }) {
+function ProfileCard({ employee, isExporting }) {
   if (!employee) return null;
 
   employee.profile_picture = `https://backend.mytime2cloud.com/media/employee/profile_picture/1765458674.jpg`;
@@ -21,8 +21,12 @@ function ProfileCard({ employee }) {
               {employee.full_name}
             </h3>
             {employee.status == 1 ? (
-              <span className="inline-flex h-fit items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold leading-none text-green-700">
-                Active
+              <span className="inline-flex h-[25px] h-fit items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold leading-none text-green-700">
+                <span
+                  className={`${isExporting ? "mt-[-15px]" : "mt-0"} block`}
+                >
+                  Active
+                </span>
               </span>
             ) : (
               <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-bold text-red-700">

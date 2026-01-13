@@ -1,4 +1,4 @@
-function Stats({ data }) {
+function Stats({ data, isExporting }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* <!-- Stat Card 1 --> */}
@@ -16,9 +16,6 @@ function Stats({ data }) {
           </div>
 
           <span className="flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-bold text-green-700  ">
-            {/* <span className="material-symbols-outlined text-sm">
-              trending_up
-            </span> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="20px"
@@ -28,7 +25,7 @@ function Stats({ data }) {
             >
               <path d="m147-209-51-51 281-281 152 152 212-211H624v-72h240v240h-72v-117L529-287 377-439 147-209Z" />
             </svg>
-            +5.2%
+            <span className={`${isExporting ? "mt-[-15px]" : "mt-0"} block`}>+5.2%</span>
           </span>
         </div>
         <div>
@@ -67,7 +64,7 @@ function Stats({ data }) {
             >
               <path d="m147-209-51-51 281-281 152 152 212-211H624v-72h240v240h-72v-117L529-287 377-439 147-209Z" />
             </svg>
-            +2.1%
+            <span className={`${isExporting ? "mt-[-15px]" : "mt-0"} block`}>+2.1%</span>
           </span>
         </div>
         <div>
@@ -106,7 +103,7 @@ function Stats({ data }) {
             >
               <path d="M624-209v-72h117L529-492 377-340 96-621l51-51 230 230 152-152 263 262v-117h72v240H624Z" />
             </svg>
-            -10%
+            <span className={`${isExporting ? "mt-[-15px]" : "mt-0"} block`}>-10%</span>
           </span>
         </div>
         <div>
@@ -143,7 +140,7 @@ function Stats({ data }) {
             >
               <path d="m147-209-51-51 281-281 152 152 212-211H624v-72h240v240h-72v-117L529-287 377-439 147-209Z" />
             </svg>
-            +0.5%
+            <span className={`${isExporting ? "mt-[-15px]" : "mt-0"} block`}>+0.5%</span>
           </span>
         </div>
         <div>

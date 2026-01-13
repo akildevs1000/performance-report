@@ -20,10 +20,17 @@ const DashboardContent = () => {
   // 1. Create the ref INSIDE the component that renders the content
   const dashboardRef = useRef(null);
 
+  const [isExporting, setIsExporting] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [startDate, setStartDate] = useState(new Date(from_date));
   const [endDate, setEndDate] = useState(new Date(to_date));
+
+  const handleExportStatus = (status) => {
+    setIsExporting(status);
+    console.log("Export status changed in App.js:", status);
+    // You can trigger a global toast or loading overlay here
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,9 +80,10 @@ const DashboardContent = () => {
         setStartDate={setStartDate}
         setEndDate={setEndDate}
         dashboardRef={dashboardRef}
+        onExportChange={handleExportStatus}
       />
-      <ProfileCard employee={data} />
-      <Stats data={data.summary} />
+      <ProfileCard isExporting={isExporting} employee={data} />
+      <Stats isExporting={isExporting} data={data.summary} />
       <Charts data={data.chart_data} />
       <MonthlyBreakdownTable data={data.monthly_breakdown} />
       <Footer data={data} />

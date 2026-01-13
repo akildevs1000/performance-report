@@ -2,51 +2,24 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { useState } from "react";
 
-function ExportButton({ dashboardRef }) {
+function ExportButton({ dashboardRef, onExportChange }) {
   const [isGenerating, setIsGenerating] = useState(false);
-
-  //   const handleDownloadPdf = async () => {
-  //     const element = dashboardRef.current;
-  //     if (!element) return;
-
-  //     setIsGenerating(true);
-  //     try {
-  //       const canvas = await html2canvas(element, {
-  //         scale: 2, // Higher scale = better quality
-  //         useCORS: true, // Important for your API images
-  //         logging: false,
-  //       });
-
-  //       const data = canvas.toDataURL("image/png");
-  //       const pdf = new jsPDF({
-  //         orientation: "portrait",
-  //         unit: "px",
-  //         format: "a4",
-  //       });
-
-  //       const imgProperties = pdf.getImageProperties(data);
-  //       const pdfWidth = pdf.internal.pageSize.getWidth();
-  //       const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-
-  //       pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
-  //       pdf.save("Employee-Performance-Report.pdf");
-  //     } catch (error) {
-  //       console.error("PDF Generation Error:", error);
-  //     } finally {
-  //       setIsGenerating(false);
-  //     }
-  //   };
 
   const handleDownloadPdf = async () => {
     const element = dashboardRef.current;
     if (!element) return;
 
     setIsGenerating(true);
+    if (onExportChange) onExportChange(true); // 👈 Inform App.js (Start)
+    await new Promise((resolve) => setTimeout(resolve, 100));
     try {
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
-        logging: false,
+        logging: true,
+        allowTaint: true,
+        // This helps prevent elements from shifting due to scroll
+        scrollY: -window.scrollY,
       });
 
       const imgData = canvas.toDataURL("image/png");
@@ -57,7 +30,7 @@ function ExportButton({ dashboardRef }) {
         format: "a4",
       });
 
-      const margin = 20; // 👈 spacing from all sides
+      const margin = 10; // 👈 spacing from all sides
       const pdfWidth = pdf.internal.pageSize.getWidth() - margin * 2;
 
       const imgProps = pdf.getImageProperties(imgData);
@@ -77,6 +50,7 @@ function ExportButton({ dashboardRef }) {
       console.error("PDF Generation Error:", error);
     } finally {
       setIsGenerating(false);
+      if (onExportChange) onExportChange(false); // 👈 Inform App.js (End)
     }
   };
 
